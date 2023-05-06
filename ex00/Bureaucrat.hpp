@@ -6,43 +6,44 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 20:03:57 by lvarela           #+#    #+#             */
-/*   Updated: 2023/05/06 21:49:09 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/05/06 22:53:58 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
+#include <exception>
 
 class Bureaucrat {
    private:
-	const std::string _name;
+	std::string _name;
 	unsigned short int _grade;
 
    public:
 	Bureaucrat();
-	Bureaucrat(std::string name, int grade);
+	explicit Bureaucrat(const std::string &name, int grade);
 	Bureaucrat(const Bureaucrat &toCopy);
-	~Bureaucrat();
+	virtual ~Bureaucrat();
 
-	Bureaucrat & operator=(Bureaucrat &toCopy);
+	Bureaucrat &operator=(const Bureaucrat &toCopy);
 
-	const std::string getName() const;
-	const unsigned short int getGrade() const;
+	const std::string &getName() const;
+	const unsigned short int &getGrade() const;
 
 	void incrementGrade();
 	void decrementGrade();
 
-	class GradeTooHighException : std::exception {
+	class GradeTooHighException : public std::exception {
 	   public:
-		virtual const char *exception() const throw() {
+		virtual const char *what() const throw() {
 			return "Grade too high!";
 		}
 	};
 
-	class GradeTooLowException : std::exception {
+	class GradeTooLowException : public std::exception {
 	   public:
-		virtual const char *exception() const throw() {
+		virtual const char *what() const throw() {
 			return "Grade too low!";
 		}
 	};
