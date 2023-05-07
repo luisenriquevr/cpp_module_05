@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 21:45:33 by lvarela           #+#    #+#             */
-/*   Updated: 2023/05/07 21:38:18 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/05/07 22:56:12 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,13 @@ Bureaucrat::Bureaucrat(const std::string &name, int grade)
     (grade > 150 | grade < 1) ? ((grade > 150) ? GradeTooLowException().what() : GradeTooHighException().what()) : NULL;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &toCopy) {
-    *this = toCopy;
+Bureaucrat::Bureaucrat(const Bureaucrat &toCopy)
+    : _name(toCopy._name), _grade(toCopy._grade) {
 }
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &toCopy) {
-    if (this != &toCopy) {
-        this->_name = toCopy._name;
+    if (this != &toCopy)
         this->_grade = toCopy._grade;
-    }
     return *this;
 }
 
@@ -49,6 +47,10 @@ void Bureaucrat::incrementGrade() {
 void Bureaucrat::decrementGrade() {
     ((this->getGrade() + 1) > 150) ? throw(GradeTooLowException()) : void();
     this->_grade++;
+}
+
+void Bureaucrat::signForm(Form &form) {
+    form.beSigned(*this);
 }
 
 Bureaucrat::~Bureaucrat() {
