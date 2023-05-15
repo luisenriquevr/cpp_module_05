@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/08 20:44:02 by lvarela           #+#    #+#             */
+/*   Updated: 2023/05/11 20:15:22 by lvarela          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Bureaucrat.hpp"
 
 #include "Bureaucrat.hpp"
@@ -12,7 +24,7 @@ int	main(void)
 
 		bureaucrat.signForm(form);
 		std::cout << form << std::endl;
-		bureaucrat.incrementGrade(60);
+		bureaucrat.incrementGrade();
 		std::cout << bureaucrat << std::endl;
 		bureaucrat.signForm(form);
 		bureaucrat.signForm(form);

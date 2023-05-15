@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 21:18:02 by lvarela           #+#    #+#             */
-/*   Updated: 2023/05/07 22:53:47 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/05/11 20:16:50 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,11 @@
 #include <iostream>
 #include "Bureaucrat.hpp"
 
+class Bureaucrat;
+
 class Form {
    private:
-    std::string _name;
+    const std::string _name;
     bool _signed;
     const unsigned short int _signGrade;
     const unsigned short int _execGrade;
@@ -32,8 +34,8 @@ class Form {
 
     const std::string getName() const;
     bool getSigned() const;
-    const unsigned short int getSignGrade() const;
-    const unsigned short int getExecGrade() const;
+    unsigned short int getSignGrade() const;
+    unsigned short int getExecGrade() const;
 
     void beSigned(Bureaucrat &signer);
 
@@ -53,9 +55,8 @@ class Form {
 
 	class SignedException : public std::exception {
 	   public:
-		virtual const char *what(Bureaucrat &signer, Form &form) const throw() {
-		    std::string error = (signer.getName() + " couldn’t sign " + form.getName() + " because is signed.");
-            return error.c_str();
+		virtual const char *what() const throw() {
+            return "The grade of the form was too high";
 		}
 	};
 };
