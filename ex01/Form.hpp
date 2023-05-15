@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 21:18:02 by lvarela           #+#    #+#             */
-/*   Updated: 2023/05/11 20:16:50 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/05/15 15:52:06 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ class Form {
 	class SignedException : public std::exception {
 	   public:
 		virtual const char *what() const throw() {
-            return "The grade of the form was too high";
+            return "The Form is already signed";
 		}
 	};
 };
