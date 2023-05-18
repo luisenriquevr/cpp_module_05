@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Aform.hpp                                          :+:      :+:    :+:   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 17:01:53 by lvarela           #+#    #+#             */
-/*   Updated: 2023/05/15 17:12:20 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/05/18 20:16:16 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,13 @@ class AForm {
 	   public:
 		virtual const char *what() const throw() {
             return "The AForm is already signed";
+		}
+	};
+
+	class NotSignedException : public std::exception {
+	   public:
+		virtual const char *what() const throw() {
+            return "The AForm is not signed";
 		}
 	};
 };

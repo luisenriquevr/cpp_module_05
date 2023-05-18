@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 21:17:59 by lvarela           #+#    #+#             */
-/*   Updated: 2023/05/15 15:53:23 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/05/16 19:56:31 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ Form::Form()
 
 Form::Form(const std::string name, const unsigned short int signGrade, const unsigned short int execGrade)
     : _name(name), _signed(false), _signGrade(signGrade), _execGrade(execGrade) {
-    if (signGrade > 150 | signGrade < 1 | execGrade > 150 | execGrade < 1)
-        (signGrade > 150 | execGrade > 150) ? throw(GradeTooLowException()) : throw(GradeTooHighException());
+    if (signGrade > 150 || signGrade < 1 || execGrade > 150 || execGrade < 1)
+        (signGrade > 150 || execGrade > 150) ? throw(GradeTooLowException()) : throw(GradeTooHighException());
 }
 
 Form::Form(const Form &toCopy)
@@ -50,7 +50,9 @@ unsigned short int Form::getExecGrade() const {
 }
 
 void Form::beSigned(Bureaucrat &signer) {
-    (signer.getGrade() > this->_signGrade) ? throw(GradeTooLowException()) : ((this->_signed) ? throw(SignedException()) : this->_signed = true);
+    if (signer.getGrade() > this->_signGrade || this->_signed)
+        (signer.getGrade() > this->_signGrade) ? throw(GradeTooLowException()) : throw(SignedException());
+    this->_signed = true;
     std::cout << signer.getName() << " signed " << this->getName() << std::endl;
 }
 
