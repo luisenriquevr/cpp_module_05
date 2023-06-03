@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 21:45:33 by lvarela           #+#    #+#             */
-/*   Updated: 2023/05/15 15:36:57 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/05/30 21:38:43 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,11 @@ void Bureaucrat::decrementGrade() {
     ((this->getGrade() + 1) > 150) ? throw(GradeTooLowException()) : this->_grade++;
 }
 
-void Bureaucrat::signForm(Form &form) {
+void Bureaucrat::signForm(AForm &form) {
     form.beSigned(*this);
 }
+
+void 
 
 Bureaucrat::~Bureaucrat() {
 }

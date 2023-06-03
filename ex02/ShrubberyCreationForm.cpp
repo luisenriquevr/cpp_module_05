@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 20:13:41 by lvarela           #+#    #+#             */
-/*   Updated: 2023/05/18 23:41:11 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/05/30 20:42:42 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ ShrubberyCreationForm::ShrubberyCreationForm()
 ShrubberyCreationForm::ShrubberyCreationForm(std::string &target)
     : AForm("ShrubberyCreationForm", 145, 137), _target(target) {
     std::cout << "ShrubberyCreationForm constructor called" << std::endl;
-    this->_target;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &toCopy)
