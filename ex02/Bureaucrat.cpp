@@ -6,11 +6,14 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 21:45:33 by lvarela           #+#    #+#             */
-/*   Updated: 2023/05/30 21:38:43 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/06/04 19:09:43 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 Bureaucrat::Bureaucrat()
     : _name("unnamed"), _grade(150) {
@@ -52,7 +55,15 @@ void Bureaucrat::signForm(AForm &form) {
     form.beSigned(*this);
 }
 
-void 
+void Bureaucrat::executeForm(const AForm &form) {
+    try {
+        form.execute(*this);
+        std::cout << *this << " executed " << form.getName() << std::endl;
+    }
+    catch(std::exception &e) {
+        std::cerr << *this << " couldn´t execute " << form << " because: " << e.what() << std::endl;
+    }
+}
 
 Bureaucrat::~Bureaucrat() {
 }

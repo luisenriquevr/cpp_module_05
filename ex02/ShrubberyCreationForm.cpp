@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 20:13:41 by lvarela           #+#    #+#             */
-/*   Updated: 2023/05/30 20:42:42 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/06/04 20:42:02 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ ShrubberyCreationForm::ShrubberyCreationForm()
     : AForm("Unnamed", 145, 137) {
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string &target)
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target)
     : AForm("ShrubberyCreationForm", 145, 137), _target(target) {
     std::cout << "ShrubberyCreationForm constructor called" << std::endl;
 }
@@ -50,4 +50,18 @@ void ShrubberyCreationForm::execute(const Bureaucrat &executor) const {
     file.open(file_name, std::fstream::out);
     !file.is_open() ? throw(OpenFileException()) : (file << tree[0]);
     file.bad() ? (file.close(), throw(WriteFileException())) : file.close();
+}
+
+const std::string &ShrubberyCreationForm::getTarget() const {
+    return this->_target;
+}
+
+ShrubberyCreationForm::~ShrubberyCreationForm() {
+}
+
+std::ostream &operator<<(std::ostream &COUT, const ShrubberyCreationForm &ShrubberyCreationForm) {
+    COUT << "Name: " << ShrubberyCreationForm.getName() << " | Signed: " << ShrubberyCreationForm.getSigned()
+    << " | SignGrade: " << ShrubberyCreationForm.getSignGrade() << " | ExecGrade: " << ShrubberyCreationForm.getExecGrade()
+    << " | Target: " << ShrubberyCreationForm.getTarget() << std::endl;
+    return COUT;
 }

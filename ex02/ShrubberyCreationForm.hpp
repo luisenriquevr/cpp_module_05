@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 19:57:38 by lvarela           #+#    #+#             */
-/*   Updated: 2023/05/18 23:39:50 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/06/04 20:41:32 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,21 @@
 
 #include <fstream>
 
+class AForm;
+
 class ShrubberyCreationForm : public AForm {
    private:
     std::string _target;
     ShrubberyCreationForm();
 
    public:
-    ShrubberyCreationForm(std::string &target);
+    ShrubberyCreationForm(const std::string &target);
     ShrubberyCreationForm(const ShrubberyCreationForm &toCopy);
     virtual ~ShrubberyCreationForm();
 
     ShrubberyCreationForm &operator=(const ShrubberyCreationForm &toCopy);
+
+    const std::string &ShrubberyCreationForm::getTarget() const;
 
     virtual void execute(const Bureaucrat &executor) const;
 
@@ -44,3 +48,5 @@ class ShrubberyCreationForm : public AForm {
         }
     };
 };
+
+std::ostream &operator<<(std::ostream &COUT, const ShrubberyCreationForm &ShrubberyCreationForm);
