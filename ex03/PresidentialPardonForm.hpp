@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 21:02:31 by lvarela           #+#    #+#             */
-/*   Updated: 2023/06/04 20:46:02 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/06/12 21:18:54 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class PresidentialPardonForm : public AForm {
 
     PresidentialPardonForm &operator=(const PresidentialPardonForm &toCopy);
 
-    const std::string &PresidentialPardonForm::getTarget() const;
+    const std::string &getTarget() const;
 
     virtual void execute(const Bureaucrat &executor) const;
 };

@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 20:17:08 by lvarela           #+#    #+#             */
-/*   Updated: 2023/06/04 20:43:40 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/06/12 21:19:00 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class RobotomyRequestForm : public AForm {
 
     RobotomyRequestForm &operator=(const RobotomyRequestForm &toCopy);
 
-    const std::string &RobotomyRequestForm::getTarget() const;
+    const std::string &getTarget() const;
 
     virtual void execute(const Bureaucrat &executor) const;
 };

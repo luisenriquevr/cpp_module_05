@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 19:57:38 by lvarela           #+#    #+#             */
-/*   Updated: 2023/06/04 20:41:32 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/06/12 21:19:05 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class ShrubberyCreationForm : public AForm {
 
     ShrubberyCreationForm &operator=(const ShrubberyCreationForm &toCopy);
 
-    const std::string &ShrubberyCreationForm::getTarget() const;
+    const std::string &getTarget() const;
 
     virtual void execute(const Bureaucrat &executor) const;
 
