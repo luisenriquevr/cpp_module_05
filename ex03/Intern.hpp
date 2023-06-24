@@ -6,13 +6,15 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 21:22:37 by lvarela           #+#    #+#             */
-/*   Updated: 2023/06/13 18:10:50 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/06/24 18:10:52 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "AForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 class Intern {
    public:
@@ -22,7 +24,7 @@ class Intern {
 
     Intern &operator=(const Intern &toCopy);
 
-    AForm *makeForm(std::string form, std::string target) const;
+    AForm *makeForm(const std::string form, const std::string target) const;
 
     class AFormException : public std::exception {
        public:

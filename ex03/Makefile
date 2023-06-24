@@ -6,7 +6,7 @@
 #    By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/22 18:00:26 by lvarela           #+#    #+#              #
-#    Updated: 2023/06/04 19:23:09 by lvarela          ###   ########.fr        #
+#    Updated: 2023/06/24 19:14:40 by lvarela          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ SRCS	=	$(wildcard *.cpp)
 OBJS	=	$(SRCS:%.cpp=%.o)
 CC		=	c++
 CPPSTD	=	-std=c++98
-FLAGS	=	-Wall -Werror -Wextra -Wshadow
+FLAGS	=	-Wall -Werror -Wextra -Wshadow -pedantic
 RM		=	rm -rf
 NAME	=	Forms
 
