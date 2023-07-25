@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 18:10:53 by lvarela           #+#    #+#             */
-/*   Updated: 2023/06/24 19:22:20 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/07/25 18:18:41 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,6 @@ AForm *Intern::makeForm(const std::string form, const std::string target) const 
 	}
 	return NULL;
 }
-
-
 
 Intern::~Intern() {
 }
