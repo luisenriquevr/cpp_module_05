@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 17:02:28 by lvarela           #+#    #+#             */
-/*   Updated: 2023/07/25 19:03:50 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/07/26 19:23:42 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void AForm::beSigned(Bureaucrat &signer) {
 void AForm::execute(Bureaucrat const &executor) const {
     if (!this->_signed || executor.getGrade() > this->_execGrade)
         !this->_signed ? throw(NotSignedException()) : throw(GradeTooLowException());
-    std::cout << "Executed " << this->getName() << std::endl;
+    std::cout << executor.getName() << " executed " << this->getName() << std::endl;
 }
 
 std::ostream &operator<<(std::ostream &COUT, const AForm &AForm) {

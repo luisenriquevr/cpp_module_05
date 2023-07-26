@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 18:10:53 by lvarela           #+#    #+#             */
-/*   Updated: 2023/07/25 18:18:41 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/07/26 18:32:20 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Intern &Intern::operator=(const Intern &toCopy) {
 }
 
 AForm *Intern::makeForm(const std::string form, const std::string target) const {
-	std::string forms[3] = {"shrubberry creation", "robotomy request", "presidential pardom"};
+	std::string forms[3] = {"Shrubbery Creation", "Robotomy Request", "Presidential Pardom"};
 	short int i = 0;
 	while (i < 3) {
 		if (forms[i] == form)
