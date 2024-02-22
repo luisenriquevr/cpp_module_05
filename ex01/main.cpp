@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 20:44:02 by lvarela           #+#    #+#             */
-/*   Updated: 2023/05/15 15:50:26 by lvarela          ###   ########.fr       */
+/*   Updated: 2024/02/22 20:03:34 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ int	main(void)
 		Form		form("Law", 40, 40);
 
 		bureaucrat.signForm(form);
-		//std::cout << form << std::endl;
+		std::cout << form;
 		bureaucrat.incrementGrade();
-		//std::cout << bureaucrat << std::endl;
+		std::cout << bureaucrat;
 		bureaucrat.signForm(form);
-		bureaucrat.signForm(form);
+		form.beSigned(bureaucrat);
 	}
 	catch (std::exception & e)
 	{
