@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 20:17:05 by lvarela           #+#    #+#             */
-/*   Updated: 2023/06/04 20:45:35 by lvarela          ###   ########.fr       */
+/*   Updated: 2023/07/26 19:28:01 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ RobotomyRequestForm::RobotomyRequestForm()
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string &target)
-    : AForm("Unnamed", 72, 45), _target(target) {
+    : AForm("RobotomyRequestForm", 72, 45), _target(target) {
     std::cout << "RobotomyRequestForm constructor called" << std::endl;
 }
 
