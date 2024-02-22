@@ -7,6 +7,8 @@ int main()
         std::cout << a << std::endl;
         a.decrementGrade();
         std::cout << a << std::endl;
+        a.decrementGrade();
+        std::cout << a << std::endl;
     }
     catch (std::exception &e) {
         std::cerr << e.what() << std::endl << std::endl;
@@ -14,6 +16,8 @@ int main()
 
     try {
         Bureaucrat b("lvarela", 2);
+        std::cout << b << std::endl;
+        b.incrementGrade();
         std::cout << b << std::endl;
         b.incrementGrade();
         std::cout << b << std::endl;
