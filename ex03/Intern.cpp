@@ -6,7 +6,7 @@
 /*   By: lvarela <lvarela@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 18:10:53 by lvarela           #+#    #+#             */
-/*   Updated: 2023/07/26 18:32:20 by lvarela          ###   ########.fr       */
+/*   Updated: 2024/03/06 21:33:31 by lvarela          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Intern &Intern::operator=(const Intern &toCopy) {
 }
 
 AForm *Intern::makeForm(const std::string form, const std::string target) const {
-	std::string forms[3] = {"Shrubbery Creation", "Robotomy Request", "Presidential Pardom"};
+	std::string forms[3] = {"Shrubbery Creation", "Robotomy Request", "Presidential Pardon"};
 	short int i = 0;
 	while (i < 3) {
 		if (forms[i] == form)
@@ -34,10 +34,13 @@ AForm *Intern::makeForm(const std::string form, const std::string target) const 
 	}
 	switch (i) {
 		case 0:
+			std::cout << "Intern creates " << form << std::endl;
 			return new ShrubberyCreationForm(target);
 		case 1:
+			std::cout << "Intern creates " << form << std::endl;
 			return new RobotomyRequestForm(target);
 		case 2:
+			std::cout << "Intern creates " << form << std::endl;
 			return new PresidentialPardonForm(target);
 		case 3:
 			throw AFormException();
